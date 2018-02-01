@@ -20,6 +20,7 @@
 //  delay(20);
 //
 //  Here's a link to the complete Arduino code:  http://bit.ly/2Ek6inT
+//  You should have already uploaded this to your Circuit Playground...
 //
 
 
@@ -104,9 +105,10 @@ void draw() {
   float lightValue = portValues[5];
   
   // draw rectangle using accelerometer values for position and size
-  // use lightValue for opacity.
+  // use lightValue to change the roundedness of the rectangle.
   //
-  // see the reference for rect(a,b,c,d,r) to learn more: https://processing.org/reference/rect_.html
+  // see the reference for rect(a,b,c,d,r) to learn more: 
+  // https://processing.org/reference/rect_.html
   rect(x, y, z, z,lightValue);
   
   // 
