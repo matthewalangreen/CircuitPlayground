@@ -22,7 +22,7 @@
 //  Here's a link to the complete Arduino code:  http://bit.ly/2Ek6inT
 //
 
-PImage photo;
+//PImage photo;
 
 // loads a library needed to establish a connection to a serial device
 // in our case, the serial device is a Circuit Playground
@@ -77,7 +77,7 @@ void draw() {
   float soundValue = map(portValues[6],200,1023,0,255);
   if(soundValue > 60) {
     // load the image of a speaker if the sound level is high enough
-    // image(photo, 0, 0);  
+    //   image(photo, 0, 0);  
      
   } 
   
