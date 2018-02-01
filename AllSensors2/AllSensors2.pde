@@ -9,7 +9,7 @@
 //  Serial.print(CircuitPlayground.motionZ());           portValues[2]
 //  Serial.print("\t");
 //  Serial.print(CircuitPlayground.leftButton());        portValues[3]
-// Serial.print("\t");
+//  Serial.print("\t");
 //  Serial.print(CircuitPlayground.rightButton());       portValues[4]
 //  Serial.print("\t");
 //  Serial.print(CircuitPlayground.lightSensor());       portValues[5]
@@ -22,7 +22,6 @@
 //  Here's a link to the complete Arduino code:  http://bit.ly/2Ek6inT
 //
 
-//PImage photo;
 
 // loads a library needed to establish a connection to a serial device
 // in our case, the serial device is a Circuit Playground
@@ -46,10 +45,9 @@ void setup()
   size(400, 200);  // canvas size
   frameRate(30); // controls how quickly the animation refreshes
   rectMode(CENTER);  // read more about this here: https://processing.org/reference/rectMode_.html
-  //photo = loadImage("sound.png");
-  
+
   // change the port name to match yours
-  myPort = new Serial(this, "/dev/cu.usbmodem14421", 9600);
+  myPort = new Serial(this, "/dev/cu.usbmodem14111", 9600);
   
   // fill up the portValues array with zeros
   // we do this at the beginning so that we don't have
@@ -71,14 +69,14 @@ void draw() {
     portValues = processSensorValues(inString);
   }
   
-  // use sound value to show sound icon
+  // use sound value to light yellow circle if sound is loud enough
   // the map() function is used here, its pretty rad
   // read more about it here: https://processing.org/reference/map_.html
   float soundValue = map(portValues[6],200,1023,0,255);
   if(soundValue > 60) {
-    // load the image of a speaker if the sound level is high enough
-    //   image(photo, 0, 0);  
-     
+    // show a light yellow circle if the sound is loud enough
+       fill(255,255,0,255);
+       ellipse(width-100,height-100,120,120); 
   } 
   
   // use the temperature value to change to opacity of the rectangle
