@@ -93,29 +93,23 @@ void draw() {
    fill(0,0,255,tempValue); // if no buttons are pressed
   }
   
-   // get the z value from the accelerometer, use to change rect. size.
-  float z = -portValues[2]/3;
+  // get the x value from the acceleromoter, use to move dot
+  float x = portValues[1]*10;
+   
+  // get the y value from the accelerometer, use to move dot
+  float y = portValues[0]*10;
   
+  // get the z value from the accelerometer, use to change rect. size.
+  float z = -portValues[2]/3;
+ 
   // use the light value to round rectangle corners
   float lightValue = portValues[5];
   
-  // draw resulting rectangle
-  //
-  // width/2+portValues[1]*10 <-- this takes the y value from the accelerometer
-  // and uses it to move the dot left and right.  It starts in the middle of the
-  // screen.
-  //
-  // height/2*portValues[0]*10 <-- this take sthe x value from the acceleromter
-  // and uses it to move the dot up and down.  It starts in the middle of the
-  // screen.
-  // 
-  // 40*Z <-- these change the width and height of the shape as the z value
-  // from the acceleromter changes
-  //
-  // lightValue is used to set the opacity
+  // draw rectangle using accelerometer values for position and size
+  // use lightValue for opacity.
   //
   // see the reference for rect(a,b,c,d,r) to learn more: https://processing.org/reference/rect_.html
-  rect(width/2+portValues[1]*10, height/2+portValues[0]*10, 40*z, 40*z,lightValue);
+  rect(width/2+x, height/2+y, 40*z, 40*z,lightValue);
   
   // 
   println(inString);
