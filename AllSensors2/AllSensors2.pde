@@ -92,10 +92,10 @@ void draw() {
   }
   
   // get the x value from the acceleromoter, use to move object
-  float x = map(portValues[1],-10,10,0,height);
+  float x = map(portValues[1],-10,10,0,width);
    
   // get the y value from the accelerometer, use to move object
-  float y = map(portValues[0],-10,10,0,width);
+  float y = map(portValues[0],-10,10,0,height);
   
   // get the z value from the accelerometer, use to change rect. size.
   float z = -portValues[2]/3;
@@ -107,7 +107,7 @@ void draw() {
   // use lightValue for opacity.
   //
   // see the reference for rect(a,b,c,d,r) to learn more: https://processing.org/reference/rect_.html
-  rect(width/2+x, height/2+y, 40*z, 40*z,lightValue);
+  rect(x, y, 40*z, 40*z,lightValue);
   
   // 
   println(inString);
