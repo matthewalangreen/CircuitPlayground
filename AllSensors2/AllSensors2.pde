@@ -111,7 +111,9 @@ void draw() {
   // https://processing.org/reference/rect_.html
   rect(x, y, z, z,lightValue);
   
-  // 
+  // Show the data coming in from the Circuit Playground in the 
+  // console.  You'll see a stream of numbers "flowing" when the 
+  // program is running.  Look down
   println(inString);
 } 
 
