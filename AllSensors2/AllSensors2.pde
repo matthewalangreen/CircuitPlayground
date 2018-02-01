@@ -98,7 +98,7 @@ void draw() {
   float y = map(portValues[0],-10,10,0,height);
   
   // get the z value from the accelerometer, use to change rect. size.
-  float z = -portValues[2]/3;
+  float z = map(portValues[2],-10,10,50,150);
  
   // use the light value to round rectangle corners
   float lightValue = portValues[5];
@@ -107,7 +107,7 @@ void draw() {
   // use lightValue for opacity.
   //
   // see the reference for rect(a,b,c,d,r) to learn more: https://processing.org/reference/rect_.html
-  rect(x, y, 40*z, 40*z,lightValue);
+  rect(x, y, z, z,lightValue);
   
   // 
   println(inString);
