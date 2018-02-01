@@ -83,10 +83,6 @@ void draw() {
   
   // use the temperature value to change to opacity of the rectangle
   float tempValue = map(portValues[7],77,86,0,255);
- 
-  
-  // get the z value from the accelerometer, use to change rect. size.
-  float z = -portValues[2]/3;
   
   // change the fill color based on the button presses
   if(portValues[3] == 1) {  // if the left button is pressed...
@@ -97,11 +93,11 @@ void draw() {
    fill(0,0,255,tempValue); // if no buttons are pressed
   }
   
+   // get the z value from the accelerometer, use to change rect. size.
+  float z = -portValues[2]/3;
+  
   // use the light value to round rectangle corners
   float lightValue = portValues[5];
-  
-
- 
   
   // draw resulting rectangle
   //
