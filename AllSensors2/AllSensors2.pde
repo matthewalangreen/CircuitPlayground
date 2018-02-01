@@ -46,7 +46,7 @@ void setup()
   size(400, 200);  // canvas size
   frameRate(30); // controls how quickly the animation refreshes
   rectMode(CENTER);  // read more about this here: 
-  photo = loadImage("sound.png");
+  //photo = loadImage("sound.png");
   
   // change the port name to match yours
   myPort = new Serial(this, "/dev/cu.usbmodem14421", 9600);
@@ -77,7 +77,7 @@ void draw() {
   float soundValue = map(portValues[6],200,1023,0,255);
   if(soundValue > 60) {
     // load the image of a speaker if the sound level is high enough
-     image(photo, 0, 0);  
+    // image(photo, 0, 0);  
      
   } 
   
