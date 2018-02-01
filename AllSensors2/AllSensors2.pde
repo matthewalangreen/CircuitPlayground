@@ -45,7 +45,7 @@ void setup()
 { 
   size(400, 200);  // canvas size
   frameRate(30); // controls how quickly the animation refreshes
-  rectMode(CENTER);  // read more about this here: 
+  rectMode(CENTER);  // read more about this here: https://processing.org/reference/rectMode_.html
   //photo = loadImage("sound.png");
   
   // change the port name to match yours
@@ -64,7 +64,7 @@ void setup()
 void draw() { 
   background(255); // make a white background
   
-   // this if statement make sure that Processing is actually
+   // this if statement makes sure that Processing is actually
    // reading data from the Circuit Playground BEFORE it runs the function
    // processSensorValues()  
   if (inString != null) {
