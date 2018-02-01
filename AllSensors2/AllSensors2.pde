@@ -112,8 +112,9 @@ void draw() {
   rect(x, y, z, z,lightValue);
   
   // Show the data coming in from the Circuit Playground in the 
-  // console.  You'll see a stream of numbers "flowing" when the 
-  // program is running.  Look down
+  // console.  You'll see a stream of numbers "flowing" in the
+  // console which is below the code window when the code is 
+  // running.
   println(inString);
 } 
 
