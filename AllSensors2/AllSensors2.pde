@@ -92,10 +92,10 @@ void draw() {
   }
   
   // get the x value from the acceleromoter, use to move object
-  float x = portValues[1]*10;
+  float x = map(portValues[1],-10,10,0,height);
    
   // get the y value from the accelerometer, use to move object
-  float y = portValues[0]*10;
+  float y = map(portValues[0],-10,10,0,width);
   
   // get the z value from the accelerometer, use to change rect. size.
   float z = -portValues[2]/3;
