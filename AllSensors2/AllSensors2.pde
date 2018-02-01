@@ -91,10 +91,10 @@ void draw() {
    fill(0,0,255,tempValue); // if no buttons are pressed
   }
   
-  // get the x value from the acceleromoter, use to move dot
+  // get the x value from the acceleromoter, use to move object
   float x = portValues[1]*10;
    
-  // get the y value from the accelerometer, use to move dot
+  // get the y value from the accelerometer, use to move object
   float y = portValues[0]*10;
   
   // get the z value from the accelerometer, use to change rect. size.
