@@ -24,7 +24,7 @@
 //
 
 int numDataPoints = 50000;
-int dataIndex = 0;
+int dataIndex = 1;
 String[] dataStrings = new String[numDataPoints]; // Save up to 10k values
 
 // loads a library needed to establish a connection to a serial device
@@ -61,6 +61,8 @@ void setup()
   {
     portValues[i] = 0; 
   }
+  dataStrings[0] = "x,y,z,leftButton,rightButton,lightSensor,soundSensor,tempSensor";
+
 } 
 
 // convert float data to string data in order to save to a file
@@ -83,7 +85,7 @@ void draw() {
     // manage data points
     dataIndex++;
     if(dataIndex > numDataPoints - 1) {
-     dataIndex = 0; 
+     dataIndex = 1; 
     }
     dataStrings[dataIndex] = buildDataString(portValues);
     saveStrings("values.csv",dataStrings);
