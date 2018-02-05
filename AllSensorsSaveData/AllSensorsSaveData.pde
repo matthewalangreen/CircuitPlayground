@@ -68,9 +68,10 @@ void setup()
 // convert float data to string data in order to save to a file
 String buildDataString(float[] v) {
   String result = "";
-  for(int i = 0; i<v.length; i++) {
+  for(int i = 0; i<v.length-1; i++) {
    result += str(v[i]) + ","; 
   }
+  result += str(v[7]);
   return result;
 }
 
@@ -78,7 +79,7 @@ void draw() {
   background(255); // make a white background
   textSize(32);
   fill(255,0,0);
-  text("Data Values Saved: ",10,40);
+  text("Rows of data saved: ",10,40);
   
    // this if statement makes sure that Processing is actually
    // reading data from the Circuit Playground BEFORE it runs the function
@@ -92,7 +93,7 @@ void draw() {
     }
     dataStrings[dataIndex] = buildDataString(portValues);
     saveStrings("values.csv",dataStrings);
-    text(dataIndex,width-80,40);
+    text(dataIndex,width-50,40);
   }
   
   // use sound value to light yellow circle if sound is loud enough
