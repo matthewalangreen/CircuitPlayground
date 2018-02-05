@@ -51,7 +51,7 @@ void setup()
   rectMode(CENTER);  // read more about this here: https://processing.org/reference/rectMode_.html
 
   // change the port name to match yours
-  myPort = new Serial(this, "/dev/cu.usbmodem14521", 9600);
+  myPort = new Serial(this, "/dev/cu.usbmodem14121", 9600);
   
   // fill up the portValues array with zeros
   // we do this at the beginning so that we don't have
@@ -76,6 +76,9 @@ String buildDataString(float[] v) {
 
 void draw() { 
   background(255); // make a white background
+  textSize(32);
+  fill(255,0,0);
+  text("Data Values Saved: ",10,40);
   
    // this if statement makes sure that Processing is actually
    // reading data from the Circuit Playground BEFORE it runs the function
@@ -89,6 +92,7 @@ void draw() {
     }
     dataStrings[dataIndex] = buildDataString(portValues);
     saveStrings("values.csv",dataStrings);
+    text(dataIndex,width-80,40);
   }
   
   // use sound value to light yellow circle if sound is loud enough
@@ -162,7 +166,7 @@ float[] processSensorValues(String valString) {
   float[] vals = new float[8];
   for(int i = 0; i<8; i++)
   {
-    if(temp != null) 
+    if(temp != null && vals.length == 8) 
     {
       vals[i] = float(temp[i]); 
     }
