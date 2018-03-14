@@ -92,7 +92,7 @@ boolean fountainOn = false;
 void setup()
 {
   // change the port name to match yours
-  myPort = new Serial(this, "/dev/cu.usbmodem14521", 9600);
+  myPort = new Serial(this, "/dev/cu.usbmodem14611", 9600);
   
   // fill up the portValues array with zeros
   // we do this at the beginning so that we don't have
@@ -104,8 +104,8 @@ void setup()
   }
   
 
-  size(1024, 768);
-  //fullScreen();
+  //size(1024, 768);
+  fullScreen();
 
   ellipseMode(CENTER);
   
