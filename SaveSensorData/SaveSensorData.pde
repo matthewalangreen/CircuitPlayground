@@ -51,7 +51,7 @@ void setup()
   rectMode(CENTER);  // read more about this here: https://processing.org/reference/rectMode_.html
 
   // change the port name to match yours
-  myPort = new Serial(this, "/dev/cu.usbmodem1431", 9600);
+  myPort = new Serial(this, "/dev/cu.usbmodem1411", 9600);
   
   // fill up the portValues array with zeros
   // we do this at the beginning so that we don't have
