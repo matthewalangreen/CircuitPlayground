@@ -92,7 +92,7 @@ boolean fountainOn = false;
 void setup()
 {
   // change the port name to match yours
-  myPort = new Serial(this, "/dev/cu.usbmodem14611", 9600);
+  myPort = new Serial(this, "/dev/cu.usbmodem14121", 9600);
   
   // fill up the portValues array with zeros
   // we do this at the beginning so that we don't have
@@ -126,6 +126,8 @@ void setup()
 
 void draw()
 {
+  
+  
   // this if statement makes sure that Processing is actually
    // reading data from the Circuit Playground BEFORE it runs the function
    // processSensorValues()  
@@ -202,6 +204,11 @@ void draw()
   }
   // Show values
   println(portValues[5]);
+  
+  // show cursor as dot
+  fill(255);
+  noStroke();
+  ellipse(x,y,10,10);
 }
 
 //  this code gets data from the Circuit Playground
@@ -249,7 +256,12 @@ void serialEvent(Serial p) {
 
 // helper functions
 void makeDotHere(float x, float y){
- dots.add(new Dot(x,y,myMixer.mixColors(mix))); 
+  for(int i = 0; i< 4; i++) { // make 4 dots
+  float dx,dy;
+  dx = random(0,0.2);
+  dy = random(0,0.2);
+    dots.add(new Dot(x+dx,y+dy,myMixer.mixColors(mix))); 
+  }
 }
 void makeDot() {
    dots.add(new Dot(random(width), random(height), myMixer.mixColors(mix)));
