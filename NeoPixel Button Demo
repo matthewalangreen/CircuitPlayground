@@ -1,0 +1,32 @@
+// Demo program for testing library and board - flip the switch to turn on/off buzzer
+// BASED ON DEMO
+
+#include <Adafruit_CircuitPlayground.h>
+
+// we light one pixel at a time, this is our counter
+uint8_t pixeln = 0;
+
+void setup() {
+  CircuitPlayground.begin();
+  // turn off speaker when not in use
+  CircuitPlayground.speaker.enable(false);
+}
+
+
+void loop() {
+
+  if (CircuitPlayground.leftButton()) {
+    Serial.println("Left button pressed!");
+    CircuitPlayground.setPixelColor(pixeln++,CircuitPlayground.colorWheel(random(255)));
+    delay(50);
+    if (pixeln == 11) {
+      pixeln = 0;
+    }
+  }
+  if (CircuitPlayground.rightButton()) {
+    Serial.println("Right button pressed!");
+    CircuitPlayground.clearPixels();
+  }
+  delay(10);
+
+}
