@@ -1,5 +1,6 @@
 // Demo program for testing library and board - flip the switch to turn on/off buzzer
 // BASED ON DEMO
+// Reference: http://adafruit.github.io/Adafruit_CircuitPlayground/html/class_adafruit___circuit_playground.html#a788663b6c0bc5f909a71b6505ccfd3f9
 
 #include <Adafruit_CircuitPlayground.h>
 
