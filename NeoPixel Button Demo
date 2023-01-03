@@ -18,6 +18,12 @@ void loop() {
 
   if (CircuitPlayground.leftButton()) {
     Serial.println("Left button pressed!");
+    
+    // the magic here is the two values inside the code: CircuitPlayground.setPixelColor(A,B)
+    // the "A" references which NeoPixel you want to turn on. There are 10 on the board, and they start
+    // at number 0 and go through 9. So, the first one is really 0, and the 10th one is really 9
+    // the "B" references the color you want to set for the neopixel. I'm using the method ".setPixelColor", but
+    // you could just use a number. Try it!
     CircuitPlayground.setPixelColor(pixeln++,CircuitPlayground.colorWheel(random(255)));
     delay(50);
     if (pixeln == 11) {
